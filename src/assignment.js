@@ -14,28 +14,37 @@ const assignment = {};
  * @returns number the sum of the numbers
  */
 function sumOfNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+    let total = arrayOfNumbers.reduce((sum,r)=> {
+      return sum + r
+    },0 )
+  return total;
 }
-// assignment.sumOfNumbers = sumOfNumbers;
+assignment.sumOfNumbers = sumOfNumbers;
 
 /**
  * Challenge - 2
  * 
- * Count all even numbers within an array of numbers.
+ // * Count all even numbers within an array of numbers.
  * If you did Challenge - 2, remove the comment in the line just after this function
  * 
  * @param {Array} arrayOfNumbers the array containing even or non-even numbers
  * @returns number the count of even numbers
  */
 function countEvenNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+  let num = 0
+  for (let i = 0; i<arrayOfNumbers.length; i++){
+    if(arrayOfNumbers[i]% 2 === 0){
+      num ++
+    }
+  }
+  return num
 }
-// assignment.countEvenNumbers = countEvenNumbers;
-
+assignment.countEvenNumbers = countEvenNumbers;
+// 
 /**
- * Challenge - 3
+ // * Challenge - 3
  * 
- * Given an array of numbers representing temperatures in Celsius,
+ // * Given an array of numbers representing temperatures in Celsius,
  * convert each number to Fahrenheit and return a new array containing the converted
  * temperatures in Fahrenheit. Decimal figures in the converted values in Fahrenheit should be removed.
  * E.g 51.21 should just be 51 (hint: Math.trunc(...) function)
